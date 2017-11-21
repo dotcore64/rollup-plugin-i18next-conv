@@ -1,0 +1,3 @@
+-R spec
+--require env-test
+--require @babel/register

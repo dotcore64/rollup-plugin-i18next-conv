@@ -1,0 +1,58 @@
+{
+  "name": "rollup-plugin-i18next-conv",
+  "version": "0.0.1",
+  "description": "Import po files with rollup",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "eslint '**/*.js'",
+    "pretest": "npm run lint",
+    "test": "mocha",
+    "build": "babel -d dist src",
+    "cover": "nyc npm test",
+    "coveralls": "npm run cover && nyc report --reporter=text-lcov | coveralls",
+    "prepare": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perrin4869/rollup-plugin-i18next-conv.git"
+  },
+  "keywords": [
+    "rollup",
+    "i18next",
+    "gettext"
+  ],
+  "author": "Julian Grinblat <julian@dotcore.co.il>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/perrin4869/rollup-plugin-i18next-conv/issues"
+  },
+  "homepage": "https://github.com/perrin4869/rollup-plugin-i18next-conv#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.32",
+    "@babel/core": "^7.0.0-beta.32",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.32",
+    "@babel/preset-env": "^7.0.0-beta.32",
+    "@babel/register": "^7.0.0-beta.32",
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
+    "env-test": "^1.0.0",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "mocha": "^4.0.1",
+    "rollup": "^0.51.8"
+  },
+  "dependencies": {
+    "babel-plugin-istanbul": "^4.1.5",
+    "i18next-conv": "^5.0.0",
+    "nyc": "^11.3.0",
+    "rollup-pluginutils": "^2.0.1"
+  },
+  "nyc": {
+    "sourceMap": false,
+    "instrument": false
+  }
+}
