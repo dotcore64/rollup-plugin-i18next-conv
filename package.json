@@ -10,7 +10,7 @@
     "build": "babel -d dist src",
     "cover": "nyc npm test",
     "coveralls": "npm run cover && nyc report --reporter=text-lcov | coveralls",
-    "prepare": "npm run build"
+    "prepare": "npm test && npm run build"
   },
   "files": [
     "dist"
