@@ -40,4 +40,15 @@ describe('rollup-plugin-i18next-conv', () => {
       expect(err.message).to.equal(`determineLocale failed for file ${__dirname}/samples/basic/locale/en/LC_MESSAGES/messages.po`);
     })
   ));
+
+  it('should skip en.po', () => (
+    rollup({
+      input: 'samples/basic/main.js',
+      plugins: [i18next({ exclude: 'samples/basic/locale/en/LC_MESSAGES/messages.po' })],
+    }).then(() => {
+      throw new Error('Should not arrive here');
+    }).catch((err) => {
+      expect(err.message).to.equal('Unexpected token');
+    })
+  ));
 });
