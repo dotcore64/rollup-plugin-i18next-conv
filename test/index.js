@@ -48,7 +48,7 @@ describe('rollup-plugin-i18next-conv', () => {
     }).then(() => {
       throw new Error('Should not arrive here');
     }).catch((err) => {
-      expect(err.message).to.equal('Unexpected token');
+      expect(err.message).to.match(/Unexpected token/);
     })
   ));
 });
