@@ -42,7 +42,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "mocha": "^5.2.0",
-    "rollup": "^0.66.6"
+    "rollup": "^0.67.0"
   },
   "dependencies": {
     "babel-plugin-istanbul": "^5.1.0",
