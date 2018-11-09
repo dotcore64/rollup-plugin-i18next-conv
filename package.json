@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "babel-plugin-istanbul": "^5.1.0",
-    "i18next-conv": "^8.0.0",
+    "i18next-conv": "^8.0.1",
     "nyc": "^13.1.0",
     "rollup-pluginutils": "^2.3.3"
   }
