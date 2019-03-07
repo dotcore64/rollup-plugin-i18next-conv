@@ -11,6 +11,11 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
+env:
+- I18NEXT_CONV_VER=8
+- I18NEXT_CONV_VER=9
+before_install:
+- travis_retry npm install i18next-conv@$I18NEXT_CONV_VER
 script:
 - npm test
 after_success:
