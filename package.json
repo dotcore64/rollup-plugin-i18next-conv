@@ -43,12 +43,12 @@
     "eslint-plugin-import": "^2.14.0",
     "i18next-conv": "^9.0.0",
     "mocha": "^6.0.2",
-    "rollup": "^0.67.0"
+    "rollup": "^1.5.0"
   },
   "dependencies": {
     "babel-plugin-istanbul": "^5.1.0",
     "nyc": "^13.1.0",
-    "rollup-pluginutils": "^2.3.3"
+    "rollup-pluginutils": "^2.4.1"
   },
   "peerDependencies": {
     "i18next-conv": ">=8.0.0"
