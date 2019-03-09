@@ -2,18 +2,18 @@
   "name": "rollup-plugin-i18next-conv",
   "version": "3.0.0",
   "description": "Import po files with rollup",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "lint": "eslint '**/*.js'",
     "pretest": "npm run lint",
     "test": "mocha",
-    "build": "babel -d dist src",
+    "build": "babel -d lib src",
     "cover": "nyc npm test",
     "coveralls": "npm run cover && nyc report --reporter=text-lcov | coveralls",
     "prepare": "npm test && npm run build"
   },
   "files": [
-    "dist"
+    "lib"
   ],
   "repository": {
     "type": "git",
