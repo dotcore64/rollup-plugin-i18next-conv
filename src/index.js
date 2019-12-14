@@ -1,5 +1,5 @@
 import path from 'path';
-import { createFilter } from 'rollup-pluginutils';
+import { createFilter } from '@rollup/pluginutils';
 import { gettextToI18next } from 'i18next-conv';
 
 // third to last element of a path like
