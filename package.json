@@ -2,18 +2,18 @@
   "name": "rollup-plugin-i18next-conv",
   "version": "3.0.0",
   "description": "Import po files with rollup",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "lint": "eslint '**/*.js'",
     "pretest": "npm run lint",
     "test": "mocha",
-    "build": "babel -d lib src",
+    "build": "babel -d dist src",
     "cover": "nyc npm test",
     "coveralls": "npm run cover && nyc report --reporter=text-lcov | coveralls",
     "prepare": "npm test && npm run build"
   },
   "files": [
-    "lib"
+    "dist"
   ],
   "repository": {
     "type": "git",
@@ -38,9 +38,9 @@
     "chai": "^4.2.0",
     "coveralls": "^3.0.3",
     "env-test": "^1.0.0",
-    "eslint": "^5.15.1",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1",
     "i18next-conv": "^9.0.0",
     "mocha": "^6.0.2",
     "rollup": "^1.27.12"

@@ -11,7 +11,7 @@ describe('rollup-plugin-i18next-conv', () => {
       input: 'samples/basic/main.js',
       plugins: [i18next()],
     }).then((
-      bundle => bundle.generate({ format: 'cjs' })
+      (bundle) => bundle.generate({ format: 'cjs' })
     )).then(({ code }) => {
       const fn = new Function('expect', code);
       fn(expect);
@@ -21,9 +21,9 @@ describe('rollup-plugin-i18next-conv', () => {
   it('should convert po file with custom determineDomain', () => (
     rollup({
       input: 'samples/custom/main.js',
-      plugins: [i18next({ determineLocale: filename => path.basename(filename, '.po') })],
+      plugins: [i18next({ determineLocale: (filename) => path.basename(filename, '.po') })],
     }).then((
-      bundle => bundle.generate({ format: 'cjs' })
+      (bundle) => bundle.generate({ format: 'cjs' })
     )).then(({ code }) => {
       const fn = new Function('expect', code);
       fn(expect);
