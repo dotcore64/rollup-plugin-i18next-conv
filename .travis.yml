@@ -12,6 +12,7 @@ deploy:
   on:
     tags: true
 script:
+- npm run build
 - npm test
 after_success:
 - npm run coveralls

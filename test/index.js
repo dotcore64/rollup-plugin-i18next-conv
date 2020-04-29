@@ -1,7 +1,8 @@
 import path from 'path';
 import { rollup } from 'rollup';
 import { expect } from 'chai';
-import i18next from '../src';
+
+import i18next from '..';
 
 process.chdir(__dirname); // Needed for rollup to properly find inputs
 
