@@ -1,4 +1,4 @@
 module.exports = {
   reporter: 'spec',
-  require: ['env-test', '@babel/register'],
+  require: ['esm', 'env-test', '@babel/register'],
 };
