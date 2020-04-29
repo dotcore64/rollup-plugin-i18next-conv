@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-i18next-conv",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Import po files with rollup",
   "main": "dist/index.js",
   "engines": {
