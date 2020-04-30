@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-i18next-conv",
-  "version": "5.0.1",
+  "version": "5.1.0",
   "description": "Import po files with rollup",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -16,7 +16,9 @@
     "coveralls": "npm run cover && nyc report --reporter=text-lcov | coveralls",
     "prepare": "npm run build && npm test"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dotcore64/rollup-plugin-i18next-conv.git"
