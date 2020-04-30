@@ -3,6 +3,7 @@
   "version": "5.0.1",
   "description": "Import po files with rollup",
   "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "engines": {
     "node": ">= 10"
   },
@@ -10,14 +11,12 @@
     "lint": "eslint '**/*.js'",
     "pretest": "npm run lint",
     "test": "mocha",
-    "build": "babel -d dist src -s",
+    "build": "rollup -c",
     "cover": "nyc npm test",
     "coveralls": "npm run cover && nyc report --reporter=text-lcov | coveralls",
     "prepare": "npm run build && npm test"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dotcore64/rollup-plugin-i18next-conv.git"
@@ -34,10 +33,9 @@
   },
   "homepage": "https://github.com/dotcore64/rollup-plugin-i18next-conv#readme",
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
     "@babel/register": "^7.9.0",
+    "@istanbuljs/nyc-config-babel": "^3.0.0",
     "babel-plugin-istanbul": "^6.0.0",
     "chai": "^4.2.0",
     "coveralls": "^3.1.0",
@@ -49,7 +47,7 @@
     "i18next-conv": "^10.0.1",
     "mocha": "^7.1.2",
     "nyc": "^15.0.1",
-    "rollup": "^2.7.2"
+    "rollup": "^2.7.5"
   },
   "dependencies": {
     "@rollup/pluginutils": "^3.0.9"
