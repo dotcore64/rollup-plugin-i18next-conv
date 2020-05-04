@@ -11,9 +11,10 @@
 ## Install
 
 ```
-$ npm install --save-dev rollup-plugin-i18next-conv
+$ npm install --save-dev rollup-plugin-i18next-conv i18next-conv
 ```
 
+Note: [i18next-conv](https://github.com/i18next/i18next-gettext-converter) is a peer dependency.
 
 ## Usage
 
