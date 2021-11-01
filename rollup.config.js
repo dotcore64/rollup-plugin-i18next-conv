@@ -8,8 +8,15 @@ export default {
   external: externalDeps.concat(nodeDeps),
   output: [
     {
-      file: pkg.main, format: 'cjs', exports: 'named', sourcemap: true,
+      file: pkg.exports['.'].require,
+      format: 'cjs',
+      sourcemap: true,
+      exports: 'named',
     },
-    { file: pkg.module, format: 'esm' },
+    {
+      file: pkg.exports['.'].import,
+      format: 'esm',
+      sourcemap: true,
+    },
   ],
 };
