@@ -3,6 +3,8 @@ import { fileURLToPath } from 'url';
 import { rollup } from 'rollup';
 import { expect } from 'chai';
 
+// https://github.com/import-js/eslint-plugin-import/issues/1649
+// eslint-disable-next-line import/no-unresolved
 import i18next from 'rollup-plugin-i18next-conv'; // self-resolve
 
 const dir = dirname(fileURLToPath(import.meta.url));

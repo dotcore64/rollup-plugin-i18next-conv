@@ -1,19 +1,22 @@
 {
   "extends": "airbnb-base",
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
   "rules": {
     "func-names": 0
   },
   "overrides": [
-      {
-          "files": ["test/{,**/}*.js"],
-          "extends": ["plugin:mocha/recommended"],
-          "plugins": ["mocha"],
-          "env": {
-              "mocha": true
-          },
-          "rules": {
-            "mocha/no-mocha-arrows": 0
-          }
+    {
+      "files": ["test/{,**/}*.js"],
+      "extends": ["plugin:mocha/recommended"],
+      "plugins": ["mocha"],
+      "env": {
+        "mocha": true
+      },
+      "rules": {
+        "mocha/no-mocha-arrows": 0
       }
+    }
   ]
 }
