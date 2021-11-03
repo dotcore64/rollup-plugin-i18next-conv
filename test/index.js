@@ -1,13 +1,13 @@
-import { basename, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { basename } from 'path';
 import { rollup } from 'rollup';
 import { expect } from 'chai';
+import { dirname } from 'dirname-filename-esm';
 
 // https://github.com/import-js/eslint-plugin-import/issues/1649
-// eslint-disable-next-line import/no-unresolved
+// eslint-disable-next-line import/no-unresolved,node/no-missing-import
 import i18next from 'rollup-plugin-i18next-conv'; // self-resolve
 
-const dir = dirname(fileURLToPath(import.meta.url));
+const dir = dirname(import.meta);
 process.chdir(dir); // Needed for rollup to properly find inputs
 
 describe('rollup-plugin-i18next-conv', () => {
