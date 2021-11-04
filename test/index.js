@@ -1,4 +1,6 @@
 import { basename } from 'path';
+import { createRequire } from 'module';
+
 import { rollup } from 'rollup';
 import { expect } from 'chai';
 import { dirname } from 'dirname-filename-esm';
@@ -58,4 +60,9 @@ describe('rollup-plugin-i18next-conv', () => {
       expect(err.message).to.match(/Unexpected token/);
     })
   ));
+
+  it('should require cjs module', () => {
+    const require = createRequire(import.meta.url);
+    expect(require('..').default).to.be.a('function');
+  });
 });
