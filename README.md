@@ -1,6 +1,6 @@
 # rollup-plugin-i18next-conv
 
-[![Travis][build-badge]][build]
+[![Build Status][build-badge]][build]
 [![npm package][npm-badge]][npm]
 [![Coverage Status][coveralls-badge]][coveralls]
 [![Dependency Status][dependency-status-badge]][dependency-status]
