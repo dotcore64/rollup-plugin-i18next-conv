@@ -51,7 +51,7 @@
     "eslint-plugin-node": "^11.1.0",
     "i18next-conv": "^12.1.1",
     "mocha": "^9.2.2",
-    "rollup": "^2.70.1"
+    "rollup": "^2.70.2"
   },
   "dependencies": {
     "@rollup/pluginutils": "^4.2.1",
