@@ -1,11 +1,11 @@
-import { basename } from 'path';
+import { basename } from 'node:path';
 
 import { rollup } from 'rollup';
 import { expect } from 'chai';
 import { dirname } from 'dirname-filename-esm';
 
 // https://github.com/import-js/eslint-plugin-import/issues/1649
-// eslint-disable-next-line import/no-unresolved,node/no-missing-import
+// eslint-disable-next-line import/no-unresolved,n/no-extraneous-import
 import i18next from 'rollup-plugin-i18next-conv'; // self-resolve
 
 const dir = dirname(import.meta);
@@ -44,8 +44,8 @@ describe('rollup-plugin-i18next-conv', () => {
       plugins: [i18next({ determineLocale: () => { throw new Error('foo'); } })],
     }).then(() => {
       throw new Error('Should not arrive here');
-    }).catch((err) => {
-      expect(err.message).to.equal(`determineLocale failed for file ${dir}/fixtures/basic/locale/en/LC_MESSAGES/messages.po`);
+    }).catch((e) => {
+      expect(e.message).to.equal(`determineLocale failed for file ${dir}/fixtures/basic/locale/en/LC_MESSAGES/messages.po`);
     })
   ));
 
@@ -55,8 +55,8 @@ describe('rollup-plugin-i18next-conv', () => {
       plugins: [i18next({ exclude: 'fixtures/basic/locale/en/LC_MESSAGES/messages.po' })],
     }).then(() => {
       throw new Error('Should not arrive here');
-    }).catch((err) => {
-      expect(err.message).to.match(/Unexpected token/);
+    }).catch((e) => {
+      expect(e.message).to.match(/Unexpected token/);
     })
   ));
 });
