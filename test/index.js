@@ -1,5 +1,4 @@
 import { basename } from 'path';
-import { createRequire } from 'module';
 
 import { rollup } from 'rollup';
 import { expect } from 'chai';
@@ -15,7 +14,7 @@ process.chdir(dir); // Needed for rollup to properly find inputs
 describe('rollup-plugin-i18next-conv', () => {
   it('should convert po file', () => (
     rollup({
-      input: 'samples/basic/main.js',
+      input: 'fixtures/basic/main.js',
       plugins: [i18next()],
     }).then((
       (bundle) => bundle.generate({ format: 'cjs' })
@@ -28,7 +27,7 @@ describe('rollup-plugin-i18next-conv', () => {
 
   it('should convert po file with custom determineDomain', () => (
     rollup({
-      input: 'samples/custom/main.js',
+      input: 'fixtures/custom/main.js',
       plugins: [i18next({ determineLocale: (filename) => basename(filename, '.po') })],
     }).then((
       (bundle) => bundle.generate({ format: 'cjs' })
@@ -41,28 +40,23 @@ describe('rollup-plugin-i18next-conv', () => {
 
   it('should fail with invalid determineDomain', () => (
     rollup({
-      input: 'samples/basic/main.js',
+      input: 'fixtures/basic/main.js',
       plugins: [i18next({ determineLocale: () => { throw new Error('foo'); } })],
     }).then(() => {
       throw new Error('Should not arrive here');
     }).catch((err) => {
-      expect(err.message).to.equal(`determineLocale failed for file ${dir}/samples/basic/locale/en/LC_MESSAGES/messages.po`);
+      expect(err.message).to.equal(`determineLocale failed for file ${dir}/fixtures/basic/locale/en/LC_MESSAGES/messages.po`);
     })
   ));
 
   it('should skip en.po', () => (
     rollup({
-      input: 'samples/basic/main.js',
-      plugins: [i18next({ exclude: 'samples/basic/locale/en/LC_MESSAGES/messages.po' })],
+      input: 'fixtures/basic/main.js',
+      plugins: [i18next({ exclude: 'fixtures/basic/locale/en/LC_MESSAGES/messages.po' })],
     }).then(() => {
       throw new Error('Should not arrive here');
     }).catch((err) => {
       expect(err.message).to.match(/Unexpected token/);
     })
   ));
-
-  it('should require cjs module', () => {
-    const require = createRequire(import.meta.url);
-    expect(require('..').default).to.be.a('function');
-  });
 });

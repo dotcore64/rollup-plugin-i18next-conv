@@ -2,28 +2,21 @@
   "name": "rollup-plugin-i18next-conv",
   "version": "6.0.0",
   "description": "Import po files with rollup",
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
   "type": "module",
   "engines": {
     "node": ">= 12.2.0"
   },
   "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
+    ".": "./index.js",
     "./package.json": "./package.json"
   },
   "scripts": {
     "lint": "eslint --cache .",
     "test": "mocha",
-    "build": "rollup -c",
-    "cover": "c8 npm test",
-    "prepare": "npm run build"
+    "cover": "c8 npm test"
   },
   "files": [
-    "dist"
+    "index.js"
   ],
   "repository": {
     "type": "git",
