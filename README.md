@@ -3,8 +3,6 @@
 [![Build Status][build-badge]][build]
 [![npm package][npm-badge]][npm]
 [![Coverage Status][coveralls-badge]][coveralls]
-[![Dependency Status][dependency-status-badge]][dependency-status]
-[![devDependency Status][dev-dependency-status-badge]][dev-dependency-status]
 
 > Import po files as i18next compatible json objects with rollup
 
@@ -74,9 +72,3 @@ export default {
 
 [coveralls-badge]: https://img.shields.io/coveralls/dotcore64/rollup-plugin-i18next-conv/master.svg?style=flat-square
 [coveralls]: https://coveralls.io/r/dotcore64/rollup-plugin-i18next-conv
-
-[dependency-status-badge]: https://david-dm.org/dotcore64/rollup-plugin-i18next-conv.svg?style=flat-square
-[dependency-status]: https://david-dm.org/dotcore64/rollup-plugin-i18next-conv
-
-[dev-dependency-status-badge]: https://david-dm.org/dotcore64/rollup-plugin-i18next-conv/dev-status.svg?style=flat-square
-[dev-dependency-status]: https://david-dm.org/dotcore64/rollup-plugin-i18next-conv#info=devDependencies
