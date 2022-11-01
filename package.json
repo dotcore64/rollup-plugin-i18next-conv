@@ -54,6 +54,6 @@
   },
   "peerDependencies": {
     "i18next-conv": ">=10.0.1",
-    "rollup": ">=2.0.0"
+    "rollup": "^2.0.0 || ^3.0.0"
   }
 }
