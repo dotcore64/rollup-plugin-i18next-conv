@@ -43,7 +43,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-mocha": "^10.1.0",
     "eslint-plugin-n": "^15.6.0",
-    "eslint-plugin-unicorn": "^45.0.1",
+    "eslint-plugin-unicorn": "^45.0.2",
     "i18next-conv": "^13.1.0",
     "mocha": "^10.2.0",
     "rollup": "^3.9.0"
