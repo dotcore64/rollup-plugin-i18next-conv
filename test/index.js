@@ -5,7 +5,7 @@ import { expect } from 'chai';
 import { dirname } from 'dirname-filename-esm';
 
 // https://github.com/import-js/eslint-plugin-import/issues/1649
-// eslint-disable-next-line import/no-unresolved,n/no-extraneous-import
+// eslint-disable-next-line import/no-unresolved
 import i18next from 'rollup-plugin-i18next-conv'; // self-resolve
 
 const dir = dirname(import.meta);
