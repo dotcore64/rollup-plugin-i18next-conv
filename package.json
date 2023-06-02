@@ -44,7 +44,7 @@
     "eslint-plugin-mocha": "^10.1.0",
     "eslint-plugin-n": "^16.0.0",
     "eslint-plugin-unicorn": "^47.0.0",
-    "i18next-conv": "^13.1.1",
+    "i18next-conv": "^14.0.0",
     "mocha": "^10.2.0",
     "rollup": "^3.23.0"
   },
