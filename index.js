@@ -4,7 +4,7 @@ import { gettextToI18next } from 'i18next-conv';
 
 // third to last element of a path like
 // /home/perrin4869/rollup-plugin-i18next-conv/test/samples/basic/locale/en/LC_MESSAGES/messages.po
-const defDetermineLocale = (filename) => filename.split(sep).slice(-3)[0];
+const defDetermineLocale = (filename) => filename.split(sep).at(-3);
 
 const getLocale = (determineLocale, onError) => {
   try {
