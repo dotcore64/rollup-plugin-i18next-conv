@@ -53,7 +53,7 @@
     "c8": "^7.14.0"
   },
   "peerDependencies": {
-    "i18next-conv": ">=10.0.1",
+    "i18next-conv": ">=14.0.0",
     "rollup": "^2.0.0 || ^3.0.0"
   }
 }
