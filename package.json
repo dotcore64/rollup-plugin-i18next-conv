@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@rollup/pluginutils": "^5.0.2",
-    "c8": "^8.0.0"
+    "c8": "^8.0.1"
   },
   "peerDependencies": {
     "i18next-conv": ">=14.0.0",
