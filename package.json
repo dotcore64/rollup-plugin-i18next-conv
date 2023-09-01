@@ -49,7 +49,7 @@
     "rollup": "^3.27.0"
   },
   "dependencies": {
-    "@rollup/pluginutils": "^5.0.2",
+    "@rollup/pluginutils": "^5.0.4",
     "c8": "^8.0.1"
   },
   "peerDependencies": {
