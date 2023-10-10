@@ -1,7 +1,7 @@
 import { basename } from 'node:path';
 
-import { rollup } from 'rollup';
-import { expect } from 'chai';
+import { rollup, VERSION } from 'rollup';
+import { expect, use } from 'chai';
 import { dirname } from 'dirname-filename-esm';
 
 // https://github.com/import-js/eslint-plugin-import/issues/1649
@@ -10,6 +10,9 @@ import i18next from 'rollup-plugin-i18next-conv'; // self-resolve
 
 const dir = dirname(import.meta);
 process.chdir(dir); // Needed for rollup to properly find inputs
+
+// eslint-disable-next-line unicorn/no-await-expression-member
+use((await import('chai-as-promised')).default);
 
 describe('rollup-plugin-i18next-conv', () => {
   it('should convert po file', () => (
@@ -39,24 +42,21 @@ describe('rollup-plugin-i18next-conv', () => {
   ));
 
   it('should fail with invalid determineDomain', () => (
-    rollup({
+    expect(rollup({
       input: 'fixtures/basic/main.js',
       plugins: [i18next({ determineLocale: () => { throw new Error('foo'); } })],
-    }).then(() => {
-      throw new Error('Should not arrive here');
-    }).catch((e) => {
-      expect(e.message).to.equal(`determineLocale failed for file ${dir}/fixtures/basic/locale/en/LC_MESSAGES/messages.po`);
-    })
+    })).to.be.rejectedWith(Error, `determineLocale failed for file ${dir}/fixtures/basic/locale/en/LC_MESSAGES/messages.po`)
   ));
 
   it('should skip en.po', () => (
-    rollup({
+    expect(rollup({
       input: 'fixtures/basic/main.js',
       plugins: [i18next({ exclude: 'fixtures/basic/locale/en/LC_MESSAGES/messages.po' })],
-    }).then(() => {
-      throw new Error('Should not arrive here');
-    }).catch((e) => {
-      expect(e.message).to.match(/Unexpected token/);
-    })
+    })).to.be.rejectedWith(
+      Error,
+      VERSION.startsWith('4.')
+        ? /Expected ';', '}' or <eof>/
+        : /Unexpected token/,
+    )
   ));
 });

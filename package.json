@@ -35,6 +35,7 @@
   "homepage": "https://github.com/dotcore64/rollup-plugin-i18next-conv#readme",
   "devDependencies": {
     "chai": "^4.3.10",
+    "chai-as-promised": "^7.1.1",
     "coveralls": "^3.1.1",
     "dirname-filename-esm": "^1.1.1",
     "eslint": "^8.51.0",
@@ -46,14 +47,14 @@
     "eslint-plugin-unicorn": "^48.0.1",
     "i18next-conv": "^14.0.0",
     "mocha": "^10.2.0",
-    "rollup": "^3.29.4"
+    "rollup": "^4.0.2"
   },
   "dependencies": {
-    "@rollup/pluginutils": "^5.0.4",
+    "@rollup/pluginutils": "^5.0.5",
     "c8": "^8.0.1"
   },
   "peerDependencies": {
     "i18next-conv": ">=14.0.0",
-    "rollup": "^2.0.0 || ^3.0.0"
+    "rollup": "^2.0.0 || ^3.0.0 || ^4.0.0"
   }
 }
