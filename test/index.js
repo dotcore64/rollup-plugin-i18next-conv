@@ -1,4 +1,5 @@
 import { basename } from 'node:path';
+import { chdir } from 'node:process';
 
 import { rollup, VERSION } from 'rollup';
 import { expect, use } from 'chai';
@@ -9,7 +10,7 @@ import { dirname } from 'dirname-filename-esm';
 import i18next from 'rollup-plugin-i18next-conv'; // self-resolve
 
 const dir = dirname(import.meta);
-process.chdir(dir); // Needed for rollup to properly find inputs
+chdir(dir); // Needed for rollup to properly find inputs
 
 // eslint-disable-next-line unicorn/no-await-expression-member
 use((await import('chai-as-promised')).default);
@@ -45,7 +46,8 @@ describe('rollup-plugin-i18next-conv', () => {
     expect(rollup({
       input: 'fixtures/basic/main.js',
       plugins: [i18next({ determineLocale: () => { throw new Error('foo'); } })],
-    })).to.be.rejectedWith(Error, `determineLocale failed for file ${dir}/fixtures/basic/locale/en/LC_MESSAGES/messages.po`)
+      // cannot determine whether the `de` or the `en` file will be processed and fail first
+    })).to.be.rejectedWith(Error, new RegExp(`^determineLocale failed for file ${dir}/fixtures/basic/locale/(en|de)/LC_MESSAGES/messages.po$`))
   ));
 
   it('should skip en.po', () => (
