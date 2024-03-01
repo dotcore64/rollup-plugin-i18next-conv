@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/dotcore64/rollup-plugin-i18next-conv#readme",
   "devDependencies": {
-    "chai": "^4.3.10",
+    "chai": "^5.1.0",
     "chai-as-promised": "^7.1.1",
     "coveralls": "^3.1.1",
     "dirname-filename-esm": "^1.1.1",
