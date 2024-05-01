@@ -19,6 +19,9 @@ jobs:
           - ^2.0.0
           - ^3.0.0
           - ^4.0.0
+        i18next-conv-version:
+          - ^14
+          - ^15
 
     steps:
       - uses: actions/checkout@v4
@@ -33,6 +36,9 @@ jobs:
 
       - name: Lint
         run: npm run lint
+
+      - name: Install i18next-conv
+        run: npm install --no-save i18next-conv@${{ matrix.i18next-conv-version }}
 
       - name: Install rollup
         run: npm install --no-save rollup@${{ matrix.rollup-version }}
