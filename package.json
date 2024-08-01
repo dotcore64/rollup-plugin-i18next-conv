@@ -38,7 +38,7 @@
     "chai": "^5.1.1",
     "chai-as-promised": "^8.0.0",
     "coveralls": "^3.1.1",
-    "dirname-filename-esm": "^1.1.1",
+    "dirname-filename-esm": "^1.1.2",
     "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.29.1",
