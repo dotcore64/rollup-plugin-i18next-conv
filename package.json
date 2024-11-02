@@ -35,7 +35,7 @@
   "homepage": "https://github.com/dotcore64/rollup-plugin-i18next-conv#readme",
   "devDependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "^4.4.0",
-    "chai": "^5.1.1",
+    "chai": "^5.1.2",
     "chai-as-promised": "^8.0.0",
     "coveralls": "^3.1.1",
     "dirname-filename-esm": "^1.1.2",
