@@ -25,11 +25,11 @@ jobs:
           - ^16
         exclude:
           - node-version: 22.x
-            i18next-conv-version: 14
+            i18next-conv-version: ^14
           - node-version: 24.x
-            i18next-conv-version: 14
+            i18next-conv-version: ^14
           - node-version: 24.x
-            i18next-conv-version: 15
+            i18next-conv-version: ^15
 
     steps:
       - uses: actions/checkout@v5
