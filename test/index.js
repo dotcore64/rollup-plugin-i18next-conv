@@ -2,16 +2,13 @@ import { basename } from "node:path";
 import { chdir } from "node:process";
 
 import { rollup, VERSION } from "rollup";
-import { expect, use } from "chai";
+import { expect } from "chai";
 
 // https://github.com/import-js/eslint-plugin-import/issues/1649
 // eslint-disable-next-line import/no-unresolved
 import i18next from "rollup-plugin-i18next-conv"; // self-resolve
 
 chdir(import.meta.dirname); // Needed for rollup to properly find inputs
-
-// eslint-disable-next-line unicorn/no-await-expression-member
-use((await import("chai-as-promised")).default);
 
 describe("rollup-plugin-i18next-conv", () => {
   it("should convert po file", () =>
