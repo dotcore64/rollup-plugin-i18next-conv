@@ -3,14 +3,13 @@ import { chdir } from 'node:process';
 
 import { rollup, VERSION } from 'rollup';
 import { expect, use } from 'chai';
-import { dirname } from 'dirname-filename-esm';
 
 // https://github.com/import-js/eslint-plugin-import/issues/1649
 // eslint-disable-next-line import/no-unresolved
 import i18next from 'rollup-plugin-i18next-conv'; // self-resolve
 
-const dir = dirname(import.meta);
-chdir(dir); // Needed for rollup to properly find inputs
+// eslint-disable-next-line n/no-unsupported-features/node-builtins
+chdir(import.meta.dirname); // Needed for rollup to properly find inputs
 
 // eslint-disable-next-line unicorn/no-await-expression-member
 use((await import('chai-as-promised')).default);
@@ -47,7 +46,8 @@ describe('rollup-plugin-i18next-conv', () => {
       input: 'fixtures/basic/main.js',
       plugins: [i18next({ determineLocale: () => { throw new Error('foo'); } })],
       // cannot determine whether the `de` or the `en` file will be processed and fail first
-    })).to.be.rejectedWith(Error, new RegExp(`^determineLocale failed for file ${dir}/fixtures/basic/locale/(en|de)/LC_MESSAGES/messages.po$`))
+      // eslint-disable-next-line n/no-unsupported-features/node-builtins
+    })).to.be.rejectedWith(Error, new RegExp(`^determineLocale failed for file ${import.meta.dirname}/fixtures/basic/locale/(en|de)/LC_MESSAGES/messages.po$`))
   ));
 
   it('should skip en.po', () => (
