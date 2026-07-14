@@ -32,6 +32,7 @@ export default function i18next({
 
       const locale = getLocale(
         () => determineLocale(id),
+        // eslint-disable-next-line unicorn/no-this-outside-of-class
         () => this.error(new Error(`determineLocale failed for file ${id}`)),
       );
 

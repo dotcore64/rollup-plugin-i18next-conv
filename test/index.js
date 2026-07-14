@@ -22,7 +22,7 @@ describe('rollup-plugin-i18next-conv', () => {
     }).then((
       (bundle) => bundle.generate({ format: 'cjs' })
     )).then(({ code }) => {
-      // eslint-disable-next-line no-new-func
+       
       const fn = new Function('expect', code);
       fn(expect);
     })
@@ -35,7 +35,7 @@ describe('rollup-plugin-i18next-conv', () => {
     }).then((
       (bundle) => bundle.generate({ format: 'cjs' })
     )).then(({ code }) => {
-      // eslint-disable-next-line no-new-func
+       
       const fn = new Function('expect', code);
       fn(expect);
     })
