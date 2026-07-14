@@ -1,6 +1,6 @@
-import { sep } from 'node:path';
-import { createFilter } from '@rollup/pluginutils';
-import { gettextToI18next } from 'i18next-conv';
+import { sep } from "node:path";
+import { createFilter } from "@rollup/pluginutils";
+import { gettextToI18next } from "i18next-conv";
 
 // third to last element of a path like
 // /home/perrin4869/rollup-plugin-i18next-conv/test/samples/basic/locale/en/LC_MESSAGES/messages.po
@@ -24,10 +24,10 @@ export default function i18next({
   const filter = createFilter(include, exclude);
 
   return {
-    name: 'i18next-conv',
+    name: "i18next-conv",
 
     transform(gettext, id) {
-      if (id.slice(-3) !== '.po') return null;
+      if (id.slice(-3) !== ".po") return null;
       if (!filter(id)) return null;
 
       const locale = getLocale(
@@ -36,12 +36,11 @@ export default function i18next({
         () => this.error(new Error(`determineLocale failed for file ${id}`)),
       );
 
-      return gettextToI18next(locale, gettext, rest)
-        .then((json) => ({
-          // proceed with the transformation...
-          code: `export default ${json};`,
-          map: { mappings: '' }, // i18next-conv does not support any mappings
-        }));
+      return gettextToI18next(locale, gettext, rest).then((json) => ({
+        // proceed with the transformation...
+        code: `export default ${json};`,
+        map: { mappings: "" }, // i18next-conv does not support any mappings
+      }));
     },
   };
 }
