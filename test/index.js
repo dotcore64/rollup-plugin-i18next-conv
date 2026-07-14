@@ -8,7 +8,6 @@ import { expect, use } from "chai";
 // eslint-disable-next-line import/no-unresolved
 import i18next from "rollup-plugin-i18next-conv"; // self-resolve
 
-// eslint-disable-next-line n/no-unsupported-features/node-builtins
 chdir(import.meta.dirname); // Needed for rollup to properly find inputs
 
 // eslint-disable-next-line unicorn/no-await-expression-member
@@ -55,7 +54,6 @@ describe("rollup-plugin-i18next-conv", () => {
     ).to.be.rejectedWith(
       Error,
       new RegExp(
-        // eslint-disable-next-line n/no-unsupported-features/node-builtins
         `^determineLocale failed for file ${import.meta.dirname}/fixtures/basic/locale/(en|de)/LC_MESSAGES/messages.po$`,
       ),
     ));
