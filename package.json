@@ -49,7 +49,7 @@
     "eslint-plugin-unicorn": "^65.0.1",
     "eslint-plugin-yml": "^3.10.0",
     "i18next-conv": "^17.0.0",
-    "prettier": "3.9.6",
+    "prettier": "3.9.10",
     "rollup": "^4.68.0"
   },
   "dependencies": {
